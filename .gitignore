@@ -1,2 +1,4 @@
-*.[oa]
-*~
+_drafts/
+_site/
+.DS_Store
+*.swp

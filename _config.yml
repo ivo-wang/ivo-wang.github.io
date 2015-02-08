@@ -9,7 +9,7 @@ github_username:  ivo-wang
 # Build settings
 markdown: redcarpet
 highlighter: pygments
-baseurl: /ivo-wang.github.io
+baseurl: http://ivo-blog.tk
 
 
 

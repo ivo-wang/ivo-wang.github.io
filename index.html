@@ -1,28 +1,21 @@
 ---
 layout: default
-title: 老王的自留地
 ---
 
-<div id="home">
-  <h1>Blog Posts</h1>
-  <ul class="posts">
+<div class="home">
+
+  <h1 class="page-heading">最近写的博客</h1>
+
+  <ul class="post-list">
     {% for post in site.posts %}
-      <li><span>{{ post.date | date_to_string }}</span> &raquo; <a href="{{ post.url }}">{{ post.title }}</a></li>
+
+ 
+   <li> <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span> &raquo; <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+
+     
     {% endfor %}
   </ul>
 
-  <h1>Highlighted Media</h1>
-  <ul class="posts">
-   
-  </ul>
+ 
 
-  <h1>Other Interviews, Talks, Etc</h1>
-  <ul class="posts">
-   
-  </ul>
-
-  <h1>Prominent Open Source Projects</h1>
-  <ul class="posts">
-    
-  </ul>
 </div>

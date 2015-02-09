@@ -16,7 +16,7 @@ title: git +github+markdown+jekyll  建立个人博客
 
 ##安装各种运行环境
 
-```
+``` shell
 sudo apt-get install ruby        （说明最好安装的是最新版，源码安装，这里testing的源里面够新我才没有从源码安装）
 sudo apt-get install rubygems
 sudo apt-get install ruby-dev （这个一定要装要不安装jekyll会报错）

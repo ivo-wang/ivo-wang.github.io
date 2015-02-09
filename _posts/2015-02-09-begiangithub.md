@@ -15,8 +15,8 @@ title: 配置和使用Github
 如果提示：No such file or directory 说明你是第一次使用git。
 生成新的SSH Key：
 ```
-$ ssh-keygen -t rsa -C "邮件地址@youremail.com"
-Generating public/private rsa key pair.
+$ ssh-keygen -t rsa -C "邮件地址@youremail.com"  
+Generating public/private rsa key pair.  
 Enter file in which to save the key (/Users/your_user_directory/.ssh/id_rsa):<回车就好>
 ```
 注意1: 此处的邮箱地址，你可以输入自己的邮箱地址；注意2: 此处的「-C」的是大写的「C」

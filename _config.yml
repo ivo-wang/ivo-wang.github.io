@@ -12,7 +12,7 @@ markdown: kramdown
 kramdown:
   input: GFM
 highlighter: pygments
-baseurl: http://ivo-blog.tk
+#baseurl: http://ivo-blog.tk
 
 
 

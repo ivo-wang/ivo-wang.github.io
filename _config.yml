@@ -6,11 +6,8 @@ description: > # this means to ignore newlines until "baseurl:"
 url: http://ivo-blog.tk # the base hostname & protocol for your site
 github_username:  ivo-wang
 
-# Build settings
-#markdown: redcarpet
-markdown: kramdown
-kramdown:
-  input: GFM
+markdown: redcarpet
+
 highlighter: pygments
 #baseurl: http://ivo-blog.tk
 

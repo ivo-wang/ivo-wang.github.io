@@ -7,8 +7,11 @@ url: http://ivo-blog.tk # the base hostname & protocol for your site
 github_username:  ivo-wang
 
 markdown: redcarpet
-
-highlighter: pygments
+extensions: [
+fenced_code_blocks 
+autolink
+]
+#highlighter: pygments
 #baseurl: http://ivo-blog.tk
 
 

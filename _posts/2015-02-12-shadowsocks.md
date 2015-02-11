@@ -137,6 +137,7 @@ REJECT     all  --  0.0.0.0/0            0.0.0.0/0           reject-with icmp-ho
 
 ##4.使用
 
+```
 apt-get install python-pip
 
 pip install shadowsocks
@@ -152,6 +153,7 @@ pip install shadowsocks
     "method":"aes-256-cfb",
     "fast_open":false
 }
+```
 
 连接时候用sslocal -c /etc/shadowsocks.josh
 浏览器开启127.0.0.1 1080 socks5即可

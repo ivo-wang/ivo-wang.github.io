@@ -101,6 +101,24 @@ Enjoy it!
 重启：/etc/init.d/shadowsocks restart
 状态：/etc/init.d/shadowsocks status
 
+
+
+
+更多版本 shadowsocks 安装：
+[CentOS 下 shadowsocks-nodejs 一键安装脚本](http://teddysun.com/355.html)
+[CentOS 下 shadowsocks-libev 一键安装脚本](http://teddysun.com/357.html)
+[Debian 下 shadowsocks-libev 一键安装脚本](http://teddysun.com/358.html)
+[CentOS 下 shadowsocks-go 一键安装脚本](http://teddysun.com/392.html)
+
+参考链接：
+http://teddysun.com/339.html
+
+
+
+
+
+
+
 ###3.特别说明
 1、已安装旧版本的 shadowsocks 需要升级的话，直接运行
 ``` pip install -U shadowsocks```
@@ -157,4 +175,8 @@ pip install shadowsocks
 
 连接时候用sslocal -c /etc/shadowsocks.josh
 浏览器开启127.0.0.1 1080 socks5即可
+
+
+
+
 

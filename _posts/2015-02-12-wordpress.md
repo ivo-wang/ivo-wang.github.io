@@ -234,5 +234,18 @@ www.w-zh.ml和w-zh.ml是2个不同的域名
 
 解决方法 ：绑定域名后需要重启lnmp ， 执行命令 /root/lnmp restart 重启lnmp服务重新登录后成功
 
+####3.重启后只能用代理访问的问题
+没错，你的防火墙iptables的问题。80端口没开................
+```
 
+sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+或是
+#/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
+然后保存：
+#/etc/rc.d/init.d/iptables save
 
+ 
+查看打开的端口：
+# /etc/init.d/iptables status
+
+```

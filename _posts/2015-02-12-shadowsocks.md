@@ -152,8 +152,21 @@ REJECT     all  --  0.0.0.0/0            0.0.0.0/0           reject-with icmp-ho
 编辑完后，重启 iptables 防火墙。命令：/etc/init.d/iptables restart
 ```
 
+##4.设置开机启动
 
-##4.使用
+- 1.添加一个后台程序
+vim /etc/rc.local
+在里面加入这一句：
+nohup /usr/bin/ssserver -c /etc/shadowsocks.json > /dev/null 2>&1 &
+- 2.如果你实在不想添加到开机启动
+那么也可以在每次重启vps以后，手动执行上面这句命令，也会启动后台应用。
+或者更加简洁的这样执行
+ssserver -c /etc/shadowsocks.json &
+也同样可行
+这句里面/etc/shadowsocks.json就表示你的ss配置文件位置
+
+
+##5.使用
 
 ```
 apt-get install python-pip

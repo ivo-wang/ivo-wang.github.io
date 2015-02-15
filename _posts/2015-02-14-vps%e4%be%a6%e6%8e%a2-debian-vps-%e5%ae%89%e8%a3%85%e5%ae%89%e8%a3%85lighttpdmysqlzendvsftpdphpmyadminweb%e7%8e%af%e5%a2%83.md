@@ -1,10 +1,8 @@
 ---
 title: Debian VPS 安装安装(Lighttpd+MySQL+Zend+vsftpd+PHPMyAdmin)Web环境
-author: huahua
+
 layout: post
-permalink: /?p=15
-categories:
-  - 未分类
+
 ---
 安装前更新下Debian服务器.
 

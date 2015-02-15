@@ -1,10 +1,8 @@
 ---
 title: 'SSH远程会话管理工具 &#8211; screen使用教程'
-author: huahua
+
 layout: post
-permalink: /?p=31
-categories:
-  - 未分类
+
 ---
 常用的使用方法
 

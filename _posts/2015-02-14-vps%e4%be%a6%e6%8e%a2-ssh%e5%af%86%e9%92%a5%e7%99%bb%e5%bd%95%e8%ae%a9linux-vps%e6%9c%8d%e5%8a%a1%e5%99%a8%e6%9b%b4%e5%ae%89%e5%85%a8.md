@@ -1,10 +1,8 @@
 ---
 title: VPS侦探 SSH密钥登录让Linux VPS/服务器更安全
-author: huahua
+
 layout: post
-permalink: /?p=33
-categories:
-  - 未分类
+
 ---
 Linux SSH登录有两种：
 

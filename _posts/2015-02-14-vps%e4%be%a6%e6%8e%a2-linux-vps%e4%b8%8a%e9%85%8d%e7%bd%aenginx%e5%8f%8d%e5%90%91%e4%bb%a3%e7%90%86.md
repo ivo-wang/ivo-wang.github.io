@@ -1,10 +1,8 @@
 ---
 title: VPS侦探 Linux VPS上配置Nginx反向代理
-author: huahua
+
 layout: post
-permalink: /?p=13
-categories:
-  - 未分类
+
 ---
 Nginx是一款高性能的HTTP和反向代理服务器。VPS侦探以前已经多次介绍过Nginx的HTTP应用，比如lnmp一键安装包。下面要说的是Nginx的反向代理功能。
 

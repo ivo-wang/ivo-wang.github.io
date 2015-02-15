@@ -1,10 +1,6 @@
 ---
-title: crontab 定时任务
-author: huahua
 layout: post
-permalink: /?p=26
-categories:
-  - 未分类
+title: crontab 定时任务
 ---
 Crontab的安装  
 1、CentOS下面安装Crontab

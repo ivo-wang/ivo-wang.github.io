@@ -106,10 +106,10 @@ $ gem install execjs
 
 http://ruby.taobao.org/      (ruby  taobao源不用这个在天朝基本上装不上的)
 如何使用？
-$ gem sources --remove https://rubygems.org/ 
-$ gem sources -a https://ruby.taobao.org/ 
+$ gem sources --remove http://rubygems.org/ 
+$ gem sources -a http://ruby.taobao.org/ 
 $ gem sources -l *** CURRENT SOURCES *** 
-https://ruby.taobao.org 
+http://ruby.taobao.org 
 # 请确保只有 ruby.taobao.org 
 ```
 使用gem安装Jekyll

@@ -17,10 +17,10 @@ connect: Network is unreachable.
 ```
 using vi to edit /etc/sysconfig/network-scripts/ifcfg-eth0, 注释掉2行
 
-NM_CONTROLLED="yes"
-ONBOOT="no"
+#NM_CONTROLLED="yes"
+#ONBOOT="no"
 
-to their opposites, and then
+保存，之后重启网络服务
 
 /etc/init.d/network restart
 

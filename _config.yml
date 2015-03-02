@@ -3,29 +3,30 @@ markdown: redcarpet
 highlighter: pygments
 
 # Site settings
-title: "Mediator"
+title: "老王的自留地"
 description: > # this means to ignore newlines until "email:"
-   A Jekyll theme - Medium inspired
+ 这里是老王的自留地，一切都是老王和媳妇老张说了算，爱写啥写啥，也不打算开放评论，就这样吧。
 
-email: a-mail@mail.mail
+email: wxtbeyond@gmail.com
 #blog logo
 logo: "/assets/images/df_logo.jpg"
 # blog cover
 cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 
-name: 'Dirk Fabisch'
-author: 'Dirk Fabisch'
-author_image: "/assets/images/author.jpg"
+# name: 'Dirk Fabisch'
+name: 'Ivo Wang'
+author: 'Ivo Wang'
+author_image: "/assets/images/author.jpeg"
 
 paginate:	15
 
-url: "http://myblog.***.***" # the base hostname & protocol for your site
+url: "http://ivo-blog.tk" # the base hostname & protocol for your site
 baseurl: ""
 
 # social icons and sharing options
 social:
   - icon:	twitter
-    url:	https://twitter.com/dirkfabisch
+    url:	https://twitter.com/IvoWang
     desc: Follow me on twitter
     share_url: http://twitter.com/share
     share_title: ?text=
@@ -39,7 +40,7 @@ social:
 #    share_link: "&amp;u="
 
   - icon:	github
-    url:	https://github.com/dirkfabisch
+    url:	https://github.com/ivo-wang
     desc:	Fork me on github
     share_url:
     share_title:

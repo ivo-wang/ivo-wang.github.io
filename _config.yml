@@ -13,7 +13,7 @@ logo: "/assets/images/df_logo.jpg"
 # blog cover
 cover: "/assets/images/cA4aKEIPQrerBnp1yGHv_IMG_9534-3-2.jpg"
 
-# name: 'Dirk Fabisch'
+
 name: 'Ivo Wang'
 author: 'Ivo Wang'
 author_image: "/assets/images/author.jpeg"
@@ -25,7 +25,7 @@ baseurl: ""
 
 # social icons and sharing options
 social:
-  - icon:	twitter
+  - icon:	"/assets/images/twitter.png"
     url:	https://twitter.com/IvoWang
     desc: Follow me on twitter
     share_url: http://twitter.com/share
@@ -39,7 +39,7 @@ social:
 #    share_title: ?t=
 #    share_link: "&amp;u="
 
-  - icon:	github
+  - icon:	"/assets/images/github.png"
     url:	https://github.com/ivo-wang
     desc:	Fork me on github
     share_url:

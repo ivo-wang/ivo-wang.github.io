@@ -1,6 +1,6 @@
 ---
 layout: post
-title:利用Iptables设置防火墙规则屏蔽IP
+title: 利用Iptables设置防火墙规则屏蔽IP
 ---
 服务器上有两个用户被DDOS攻击，虽然他们已经更换了服务器，但为了安全起见，还是屏蔽了一下攻击源IP，这里介绍一下如何利用Iptables屏蔽IP。
 

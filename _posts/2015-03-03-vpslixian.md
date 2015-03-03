@@ -102,13 +102,13 @@ useradd ivo 1989
 添加一个zhang3用户，密码是1989。
 
 ###4.下载方法
-```
+
 Web界面右上角有个长条（命令栏），后面有个按钮叫Input。在命令栏中填入地址（电驴地址，好像http地址也行，没试过），然后点Input就添加到下载列表了，BT的话就输入dllink /root/mulu/test.torrent，然后Input即可（或者将种子文件放到/var/lib/mldonkey/torrents/incoming目录下，这个目录是被自动扫描的，然后自动添加）。
 
 下载后的文件默认存放为/var/lib/mldonkey/incoming/里面，下载的文件放在files文件夹，如果是下载的一个文件夹（bt类），就放在directories里面，当然，这些都是可以修改的。
 
 
-```
+
 
 
 

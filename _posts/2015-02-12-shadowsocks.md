@@ -186,7 +186,8 @@ pip install shadowsocks
 }
 ```
 
-连接时候用sslocal -c /etc/shadowsocks.josh
+连接时候用sslocal -c /etc/shadowsocks.json
+
 浏览器开启127.0.0.1 1080 socks5即可
 
 

@@ -63,7 +63,7 @@ Nginx、MySQL、PHP都是running，80和3306端口都存在，说明已经安装
 
    cd /root
 
-    . vhost.sh
+    ./ vhost.sh
 
 在终端里面执行上面的命令，即可开始添加虚拟主机;
 

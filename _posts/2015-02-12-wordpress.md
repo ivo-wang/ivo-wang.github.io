@@ -167,9 +167,9 @@ www.w-zh.ml和w-zh.ml是2个不同的域名
 
 ####拷贝Wordpress到你的网站目录下
 
-   cp -R wordpress/* /home/wwwroot/www.hiadmin.org/
+   cp -R wordpress/* /home/wwwroot/www.w-zh.ml/
 
-将wordpress目录下的所有文件拷贝到www,hiadmin.org中
+将wordpress目录下的所有文件拷贝到www.w-zh.ml中
 
 ####设置目录权限
 

@@ -157,13 +157,13 @@ www.w-zh.ml和w-zh.ml是2个不同的域名
 
 ####下载WorPress
 
-   wget http://cn.wordpress.org/wordpress-3.9-zh_CN.zip
+   wget https://cn.wordpress.org/wordpress-4.1-zh_CN.zip
 
 运行wget下载最版本的WordPress
 
 ####运行unzip解压
 
-   unzip wordpress-3.9-zh_CN.zip
+   unzip wordpress-4.1-zh_CN.zip
 
 ####拷贝Wordpress到你的网站目录下
 

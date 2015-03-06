@@ -153,7 +153,7 @@ www.w-zh.ml和w-zh.ml是2个不同的域名
 
    cd /home/wwwroot/
 
-然后看看你的'www.hiadmin.org'文件夹是否存在.
+然后看看你的'www.w-zh.ml'文件夹是否存在.
 
 ####下载WorPress
 

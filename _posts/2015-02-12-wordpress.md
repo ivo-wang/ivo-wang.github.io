@@ -175,16 +175,17 @@ www.w-zh.ml和w-zh.ml是2个不同的域名
 
 由于wordpress在安装的时候以及在安装插件主题和自升级的需要可写权限。所以我要对特定目录设权限。
 
-   chmod -R 777 wp-admin/
+```
+chmod -R 777 wp-admin/
 
-    chmod -R 777 wp-content/
+chmod -R 777 wp-content/
 
-    chmod -R 777 wp-includes/
+chmod -R 777 wp-includes/
 
-    chmod -R 777 wp-config-sample.php
+chmod -R 777 wp-config-sample.php
 
-    chmod -R 777 readme.html
-
+chmod -R 777 readme.html
+```
 ####创建数据库
 
 在安装lnmp之后我们就已经可以通过pvs主机IP打开默认网站，通过上面的phpmyadmin这个连接 
@@ -208,7 +209,7 @@ www.w-zh.ml和w-zh.ml是2个不同的域名
 
 修改网站目录下的wp-config.php文件，添加如下内容
 
-   define("FS_METHOD","direct");
+    define("FS_METHOD","direct");
 
     define("FS_CHMOD_DIR",0777);
 
@@ -242,7 +243,7 @@ sudo iptables -A INPUT -p tcp --dport 80 -j ACCEPT
 或是
 #/sbin/iptables -I INPUT -p tcp --dport 80 -j ACCEPT
 然后保存：
-#/etc/rc.d/init.d/iptables save
+#/etc/init.d/iptables save
 
  
 查看打开的端口：

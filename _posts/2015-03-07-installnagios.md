@@ -1,6 +1,6 @@
 ---
 layout: post
-title:centos部署nagios
+title: centos部署nagios
 ---
 
 ###准备工作
@@ -72,3 +72,4 @@ wget http://jaist.dl.sourceforge.net/project/nagios/nagios-4.x/nagios-4.1.0/nagi
   service nagios restart
   service httpd restart
 ```
+浏览器打开192.168.1.113/nagios 输入用户名 nagiosadmin 密码 xxx即可登录

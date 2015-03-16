@@ -63,6 +63,9 @@ wget http://jaist.dl.sourceforge.net/project/nagios/nagios-4.x/nagios-4.1.0/nagi
   
   
   160   setenforce 0           关闭selinux
+  或添加
+  chcon -R -t httpd_sys_content_t /usr/local/nagios/sbin/
+chcon -R -t httpd_sys_content_t /usr/local/nagios/share/
   166  service iptables status
   167  iptables -I INPUT -p tcp --dport 80 -j ACCEPT 
   168  iptables -I INPUT -p tcp --dport 22 -j ACCEPT 

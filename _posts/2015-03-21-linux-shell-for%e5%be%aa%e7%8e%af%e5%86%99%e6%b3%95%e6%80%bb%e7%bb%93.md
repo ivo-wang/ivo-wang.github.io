@@ -1,8 +1,6 @@
 ---
 title: Linux Shell for循环写法总结
-author: huahua
 layout: post
-permalink: /?p=67
 categories:
   - 未分类
 ---

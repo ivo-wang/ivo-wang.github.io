@@ -1,8 +1,6 @@
 ---
 title: 20个 Unix/Linux 命令技巧
-author: huahua
 layout: post
-permalink: /?p=78
 categories:
   - 未分类
 ---

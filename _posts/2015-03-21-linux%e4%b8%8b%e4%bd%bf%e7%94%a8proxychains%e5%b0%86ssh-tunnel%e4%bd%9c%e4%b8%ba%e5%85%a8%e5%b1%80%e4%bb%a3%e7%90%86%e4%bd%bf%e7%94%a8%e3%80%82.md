@@ -1,8 +1,6 @@
 ---
 title: Linux下使用proxychains将SSH tunnel作为全局代理使用。
-author: huahua
 layout: post
-permalink: /?p=73
 categories:
   - 未分类
 ---

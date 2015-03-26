@@ -1,8 +1,6 @@
 ---
 title: while do if do练习
-author: huahua
 layout: post
-permalink: /?p=69
 categories:
   - 未分类
 ---

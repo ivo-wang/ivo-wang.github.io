@@ -1,8 +1,6 @@
 ---
 title: Nginx 简单的负载均衡配置示例
-author: huahua
 layout: post
-permalink: /?p=84
 categories:
   - 未分类
 ---

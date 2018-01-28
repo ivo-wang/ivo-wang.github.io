@@ -1,25 +1,22 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-  {% include head.html %}
+{% include head.html %}
 
-  <body>
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
 
-    {% include header.html %}
+    {% include nav.html %}
 
-    <!-- content start -->
-
-    <div class="page-content">
-      <div class="wrapper">
-        {{ content }}
-      </div>
-    </div>
-
-    <!-- content end -->
+    {{ content }}
 
     {% include footer.html %}
-    {% include javascripts.html %}
 
-  </body>
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
+
+</body>
 
 </html>

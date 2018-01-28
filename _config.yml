@@ -1,6 +1,6 @@
 # Site settings
 title: ivo Blog
-SEOTitle: 老王的自留地 | Ivo Blog
+SEOTitle: 老王的自留地 | ivo Blog
 header-img: img/post-bg-desk.jpg
 email: wxtbeyond@gmail.com
 description: 这里是老王的自留地，一切都是老王和媳妇老张说了算，爱写啥写啥，也不打算开放评论，就这样吧。 #"Every failure is leading towards success."
@@ -12,7 +12,7 @@ github_repo: "https://github.com/ivo-wang/ivo-wang.github.io.git" # you code rep
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: "写写字为了不忘记!"
-sidebar-avatar: /img/about-BY-gentle.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: /img/lookup.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
@@ -88,7 +88,7 @@ ga_domain: ezlost.com               # 默认的是 auto, 这里我是自定义�
 
 # Featured Tags
 featured-tags: true                     # 是否使用首页标签
-featured-condition-size: 5              # 相同标签数量大于这个数，才会出现在首页
+featured-condition-size: 3              # 相同标签数量大于这个数，才会出现在首页
 
 
 

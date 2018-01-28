@@ -1,7 +1,7 @@
 # Site settings
 title: ivo Blog
 SEOTitle: 老王的自留地 | ivo Blog
-header-img: img/tap-bg-o.jpg
+header-img: "img/tap-bg-o.jpg"
 email: wxtbeyond@gmail.com
 description: 这里是老王的自留地，一切都是老王和媳妇老张说了算，爱写啥写啥，也不打算开放评论，就这样吧。 #"Every failure is leading towards success."
 keyword: "ivo, ivo Blog, linux, network, IVO, 老王, 网络, 技巧"

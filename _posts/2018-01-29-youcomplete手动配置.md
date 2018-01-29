@@ -1,7 +1,6 @@
 ---
 layout: post
 title: vim 安装youcompleteme
-tags: vim youcompleteme 
 ---
 ###vim 安装youcompleteme
 - 简介：全手动安装，

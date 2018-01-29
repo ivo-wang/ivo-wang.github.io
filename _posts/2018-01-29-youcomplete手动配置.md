@@ -2,11 +2,11 @@
 layout: post
 title: vim 安装youcompleteme
 ---
-###vim 安装youcompleteme
+### vim 安装youcompleteme
 - 简介：全手动安装，
 简单方式在ubuntu gnome上无效在deepin 15.04上可以。
 确保你的Vim 7.4.1578以上 且支持 Python 2 or Python 3 .使用`vim --version`检查是否支持。
-###简单方式：
+### 简单方式：
 ```
 sudo apt-get install vim
 sudo apt-get install vim-addon-manager 
@@ -14,8 +14,8 @@ vam install youcompleteme
 sudo vam install youcompleteme
 ```
 
-###全手动方式
-####0x01. 编译安装vim
+### 全手动方式
+#### 0x01. 编译安装vim
 - 安装编译vim用的基本软件
 ```
 sudo apt-get install libncurses5-dev libgnome2-dev libgnomeui-dev \
@@ -77,7 +77,7 @@ make VIMRUNTIMEDIR=/usr/local/share/vim/vim80
 ```
 进入vim以后 输入：version 查看是否有支持python2与python3
 
-####0x02.安装Vundle（vim的插件管理器，YouCompleteMe 简称YCM是其中一个插件）
+#### 0x02.安装Vundle（vim的插件管理器，YouCompleteMe 简称YCM是其中一个插件）
 前提是必须保证之前的vim已经安装完成了
 使用git clone来复刻过来到本地
 

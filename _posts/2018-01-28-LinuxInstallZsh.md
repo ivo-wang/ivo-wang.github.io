@@ -1,12 +1,6 @@
 ---
 layout:  post
 title:	vim 安装youcompleteme
-date:	2018-01-28
-author:	ivo
-catalog: ture
-tags:
-    - zsh
-    - linux
 ---
 ### 安装git和zsh
 安装zsh需要用到git,所以第一步是安装git 和zsh 

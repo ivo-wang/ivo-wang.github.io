@@ -2,6 +2,7 @@
 layout:  post
 title:	vim 安装youcompleteme
 ---
+
 ### 安装git和zsh
 安装zsh需要用到git,所以第一步是安装git 和zsh 
 ```

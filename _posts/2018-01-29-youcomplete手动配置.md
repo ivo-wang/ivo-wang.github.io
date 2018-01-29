@@ -1,6 +1,12 @@
 ---
-layout: post
-title: vim 安装youcompleteme
+layout:	 post
+title:	vim 安装youcompleteme
+date:	2018-01-29
+author:	ivo
+catalog: ture
+tags:
+    - vim
+    - youcompleteme
 ---
 ### vim 安装youcompleteme
 - 简介：全手动安装，

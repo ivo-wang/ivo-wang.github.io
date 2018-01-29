@@ -1,5 +1,5 @@
 ---
-layout:	 post
+layout:  post
 title:	vim 安装youcompleteme
 date:	2018-01-29
 author:	ivo

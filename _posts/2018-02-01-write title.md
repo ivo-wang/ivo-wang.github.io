@@ -34,6 +34,5 @@ tags:
     - 
 ---
 EOF
-
 vim $workdir$cudate-"$name".md
 ```

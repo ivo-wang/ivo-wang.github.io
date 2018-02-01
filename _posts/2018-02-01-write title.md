@@ -14,28 +14,4 @@ tags:
 就可以直接在终端里面使用pl来写md了.
 输入pl后会要求输入简洁的关键字或是博客的名字,然后回车,在vim中就可以直接编辑了
 
-```
-#!/bin/bash
-workdir=~/Documents/post/
-cudate=`date +%Y-%m-%d`
-read -p"Please input simple title:" name
-touch $workdir$cudate-"$name".md
-cat >$workdir$cudate-"$name.md"<<EOF
-
----
-layout:  post
-title:  $name
-subtitle: $name 
-date: $cudate
-author: ivo
-catalog: true
-header-img:
-tags:
-    - 
-    - 
----
-
-EOF
-
-vim $workdir$cudate-"$name".md
-```
+[pl的源码](/code/pl)

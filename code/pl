@@ -1,0 +1,21 @@
+#!/bin/bash
+workdir=~/Documents/post/
+cudate=`date +%Y-%m-%d`
+read -p"Please input simple title:" name
+touch $workdir$cudate-"$name".md
+cat >$workdir$cudate-"$name.md"<<EOF
+---
+layout:  post
+title:  $name
+subtitle: $name 
+date: $cudate
+author: ivo
+catalog: true
+header-img:
+tags:
+    - 
+    - 
+---
+EOF
+
+vim $workdir$cudate-"$name".md

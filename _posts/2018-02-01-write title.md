@@ -21,6 +21,7 @@ cudate=`date +%Y-%m-%d`
 read -p"Please input simple title:" name
 touch $workdir$cudate-"$name".md
 cat >$workdir$cudate-"$name.md"<<EOF
+
 ---
 layout:  post
 title:  $name
@@ -33,6 +34,8 @@ tags:
     - 
     - 
 ---
+
 EOF
+
 vim $workdir$cudate-"$name".md
 ```

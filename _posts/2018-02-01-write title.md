@@ -14,7 +14,7 @@ tags:
 就可以直接在终端里面使用pl来写md了.
 输入pl后会要求输入简洁的关键字或是博客的名字,然后回车,在vim中就可以直接编辑了
 
-``
+```
 #!/bin/bash
 workdir=~/Documents/post/
 cudate=`date +%Y-%m-%d`
@@ -36,4 +36,4 @@ tags:
 EOF
 
 vim $workdir$cudate-"$name".md
-``
+```

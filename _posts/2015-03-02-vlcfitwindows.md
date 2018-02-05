@@ -9,4 +9,3 @@ title: vlc卡全屏的解决方案
 
 Select Tools ⇨ Preferences ⇨ Interface then uncheck the box Resize interface to video size.
 Finally, restart VLC.
-

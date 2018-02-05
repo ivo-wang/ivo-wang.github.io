@@ -13,6 +13,7 @@ tags:
 iptables转发有一种思想是建一条链,然后做ip的排除,ip段里面的return非ip段里面的redirect 到对应的端口上
 今天说另一种思想,类似autoproxy.用ipset建一个地址池方法如下
 
+```
 # ipset create myset-ip hash:ip
 or
 
@@ -21,8 +22,8 @@ Add any IP address that you'd like to block to the set.
 
 # ipset add myset 1.1.1.1
 # ipset -A myset 2.2.2.2```
-
 ```
+
 关于ipset的用法最好查看arch wiki [https://wiki.archlinux.org/index.php/Ipset](https://wiki.archlinux.org/index.php/Ipset)非常的详细
 
 下面是实例

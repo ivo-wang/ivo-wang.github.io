@@ -114,7 +114,6 @@ wget https://bootstrap.pypa.io/get-pip.py
 pip 9.0.1 from /usr/local/python2.7.5/lib/python2.7/site-packages (python 2.7)
 ```
 
-####
 
 ---
 

@@ -11,7 +11,7 @@ tags:
     - centos
 ---
 Centos6系统默认安装的Python版本是2.6，但是目前好多程序支持2.7及以上版本，故这里介绍如何从2.6升级到2.7，以及过程中遇到的问题
-
+**原文出自[https://www.jianshu.com/p/b0c124cd8aa9](https://www.jianshu.com/p/b0c124cd8aa9)更改了其中一些错误
 ---
 
 ### 环境

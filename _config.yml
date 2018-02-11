@@ -17,7 +17,7 @@ sidebar-avatar: /img/lookup.jpg      # use absolute URL, seeing it's used in bot
 
 
 # SNS settings
-RSS: false
+RSS: true
 # weibo_username:     qiubaiying
 zhihu_username:     xiceman
 github_username:    ivo-wang

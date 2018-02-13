@@ -6,7 +6,7 @@
 > 
 > 更为详细的教程[《利用 GitHub Pages 快速搭建个人博客》](http://www.jianshu.com/p/e68fba58f75c) 
 > 
-### [我的博客在这里 &rarr;](http://ezlost.com)
+### [我的博客在这里 &rarr;](http://ezlost.tk)
 
 
 
@@ -219,7 +219,7 @@ ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 
 # Google Analytics
 ga_track_id: 'UA-113204747-1'            # 你用Google账号去注册一个就会给你一个这样的id
-ga_domain: ezlost.com			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
+ga_domain: ezlost.tk			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
 ```
 
 ### Customization

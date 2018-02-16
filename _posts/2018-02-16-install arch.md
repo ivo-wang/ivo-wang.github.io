@@ -76,4 +76,15 @@ zh_TW.UTF-8 UTF-8
   > 对新安装的系统，需要再次设置网络。具体请参考 [Network configuration (简体中文)](https://wiki.archlinux.org/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)") 。对于 [无线网络配置](https://wiki.archlinux.org/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")，[安装](https://wiki.archlinux.org/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)，[dialog](https://www.archlinux.org/packages/?name=dialog) 以及需要的 [固件软件包](https://wiki.archlinux.org/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
   - initramfs 创建一个初始 RAM disk：`mkinitcpio -p linux`
   - root密码 用`passwd`来更改
-  - grub引导。
+  - grub引导.先安装所需要的程序`pacman -S  grub efibootmgr` 然后配置`grub-install --recheck /dev/sdb` 如果提示error:cannot find EFI directory，说明找不到EFI文件夹的位置，还需要加上--efi-directory参数指明安装位置`grub-install --recheck /dev/sdb --efi-directory=/boot`
+> 没有错误则说明安装成功。安装完毕之后还需要生成一个grub配置文件。这一步会探测系统上已经安装的系统并写入到配置文件中。但是由于在安装介质环境中，此时Windows系统可能会探测不到。等到一会重启真正进入Arch环境之后，还需要重新执行一下这个命令，这样就会正常地探测到所有系统了。
+运行`grub-mkconfig -o /boot/grub/grub.cfg`即将完成了。
+### 重启
+输入 `exit` 或按 `Ctrl+D` 退出 chroot 环境。
+可选用 `umount -R /mnt` 手动卸载被挂载的分区：这有助于发现任何“繁忙”的分区，并通过  [fuser(1)](https://jlk.fjfi.cvut.cz/arch/manpages/man/fuser.1) 查找原因。
+最后，通过执行 `reboot` 重启系统：_systemd_ 将自动卸载仍然挂载的任何分区。不要忘记移除安装介质，然后使用root帐户登录到新系统i。
+
+
+
+至于图形界面及美化，将在下一篇中介绍
+

@@ -39,6 +39,30 @@ tags:
 - 挂载 `mount /dev/sdb3 /mnt` 创建三个文件夹boot，boot/efi，home。`cd /mnt` `mkdir -p boot/efi` `mkdir home`.继续挂载 `mount /dev/sdb1 /mnt/boot/efi` `mount /dev/sda1 /mnt/home`.启用swap `swapon /dev/sdb2`。后面会用到genfstab，它会自动检测挂载的文件系统和 swap 分区。
 
 ### 0x03 安装
+- 选择镜像源，编辑 `/etc/pacman.d/mirrorlist`因为我们在中国把china的放几个就好啦，注释要不要无所谓，最终这个文件里面只要有几个中国的地址就好来，比如163 ustc 和清华的
 
+```
+## China
+Server = http://mirrors.ustc.edu.cn/archlinux/$repo/os/$arch
+Server = http://mirrors.xjtu.edu.cn/archlinux/$repo/os/$arch
+Server = http://mirrors.neusoft.edu.cn/archlinux/$repo/os/$arch
+Server = http://mirrors.tuna.tsinghua.edu.cn/archlinux/$repo/os/$arch
+```
+这个mirrorlist非常的重要一定要做对了，后面也将通过 pacstrap 被复制并保存在到系统中。
+- 安装基本系统。因为要使用AUR所以还要装一个`base-devel`。如果不用可以不装这个。输入命令`pacstrap -i /mnt base base-devel` 。使用 `-i` 选项时会在实际安装前进行确认。
 
+### 0x04 配置系统
+- fstab 这个用命令去生成不用手动的敲，`genfstab -U /mnt >> /mnt/etc/fstab`，在这样做完以后最好去看一下/mnt/etc/fstsb有没有内容，内容正确不正确。
+
+- chroot [Chroot](https://en.wikipedia.org/wiki/Chroot "wikipedia:Chroot") 就是变更当前进程及其子进程的可见根路径。变更后，程序无法访问可见根目录外文件和命令。这个目录叫作 _chroot jail_。输入命令 `arch-chroot /mnt`这样根目录就变成了/mnt了。以下是需要的操作
+  - 设置时区上海的时区 `ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime`  - 设置时间标准为 UTC，并调整时间漂移`hwclock --systohc --utc`
+  - Locale 本地化的程序与库若要本地化文本，都依赖 Locale, 后者明确规定地域、货币、时区日期的格式、字符排列方式和其他本地化标准等等.在下面两个文件设置：`locale.gen` 与 `locale.conf`.`/etc/locale.gen`是一个仅包含注释文档的文本文件。指定您需要的本地化类型，只需移除对应行前面的注释符号（`＃`）即可，建议选择帶`UTF-8`的項
+
+```
+# nano /etc/locale.gen
+en_US.UTF-8 UTF-8
+zh_CN.UTF-8 UTF-8
+zh_TW.UTF-8 UTF-8
+```
+  - 接着执行`locale-gen`以生成locale资料。`/etc/locale.gen` 生成指定的本地化文件，每次 [glibc](https://www.archlinux.org/packages/?name=glibc) 更新之后也会运行 `locale-gen`。
 

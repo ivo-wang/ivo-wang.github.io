@@ -28,9 +28,9 @@ tags:
   - 将 _layout_ 转换为您的键盘布局，如`fr`，`uk`，`dvorak`或`be-latin1`。[这里](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2#Officially_assigned_code_elements "wikipedia:ISO 3166-1 alpha-2")有国家的二位字母编码表。使用命令 `ls /usr/share/kbd/keymaps/**/*.map.gz` 列出所有可用的键盘布局。[Console fonts](https://wiki.archlinux.org/index.php/Console_fonts "Console fonts") 位于 `/usr/share/kbd/consolefonts/`, 设置方式请参考 [setfont(8)](https://jlk.fjfi.cvut.cz/arch/manpages/man/setfont.8).
 - 验证uefi `ls /sys/firmware/efi/efivars` 不存在的话启动的是bios方式，需要对启用主板的uefi功能。如果没有就算了。
 - 检查网是不是连上了 `ping -c 3 archlinux.org` 
-  -连上的话是有返回的
-  -若发现网络不通,利用 `systemctl stop dhcpcd@`,`TAB` 停用 `dhcpcd` 进程。这里如果就有问题，请前往arch官网查看网络相关的配置。出师不利(我用的wifi，非常的不好用就是连不上，最后重新用的有线，折腾到最后也基本上玩明白无线了，以后会讲，篇幅略大)  
-    -无线的方式连接
+  - 连上的话是有返回的
+  - 若发现网络不通,利用 `systemctl stop dhcpcd@`,`TAB` 停用 `dhcpcd` 进程。这里如果就有问题，请前往arch官网查看网络相关的配置。出师不利(我用的wifi，非常的不好用就是连不上，最后重新用的有线，折腾到最后也基本上玩明白无线了，以后会讲，篇幅略大)  
+    - 无线的方式连接
 - 更新系统时间 `timedatectl set-ntp true`
 - 下面要对硬盘重新的分区 因为用的gpt所以我用的gdisk工具，如果是用mbr直接用disk就好了。说几个gdisk常用的选项 o 新建分区表gpt格式的;n新建分区;p 列出现有分区;d删除分区;w保存。我用的硬盘分区如下 128g固态，500m esp分区，4g swap，其余给/;500g 机械，给/home
  具体过程如下。首先用`lsblk`来查看具体的分区大小来判断哪个是机械硬盘，哪个是固态硬盘。我的机械是`/dev/sda`，固态`/dev/sdb`. 现在开始分区，`gdisk /dev/sdb`

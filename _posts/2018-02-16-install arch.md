@@ -62,5 +62,16 @@ en_US.UTF-8 UTF-8
 zh_CN.UTF-8 UTF-8
 zh_TW.UTF-8 UTF-8
   ```
-  - 接着执行`locale-gen`以生成locale资料。`/etc/locale.gen` 生成指定的本地化文件，每次 [glibc](https://www.archlinux.org/packages/?name=glibc) 更新之后也会运行 `locale-gen`。
-
+  - 执行`locale-gen`以生成locale信息。`/etc/locale.gen` 生成指定的本地化文件，每次 [glibc](https://www.archlinux.org/packages/?name=glibc) 更新之后也会运行 `locale-gen`。
+  - 创建 `locale.conf` 将系统 locale 设置为`en_US.UTF-8`，系统的 Log 就会用英文显示，这样更容易问题的判断和处理。输入命令 ` echo LANG=en_US.UTF-8 > /etc/locale.conf`不推荐将这里设置中文，tty容易乱码。
+  - 主机名 要设置`hostname`，将其添加到 `/etc/hostname`, `myhostname` 是需要的主机名：`echo myhostname > /etc/hostname`。最好也添加到hosts的`127.0.1.1`一份。
+  ```
+/etc/hosts
+127.0.0.1	localhost.localdomain	localhost
+::1		localhost.localdomain	localhost
+127.0.1.1	myhostname.localdomain	myhostname
+  ```
+  - 网络配置 如果使用有线网的话，令dhcp服务开机启动:`systemctl enable dhcpcd.service`.如果使用无线网络的话，要安装这几个包，否则重启之后无法连接无线网络`pacman -S iw wpa_supplicant dialog networkmanager`.>如果退出chroot之后，进入arch，使用Wifi，那么就可以禁用dhcp，让networkmanager自启。如果是有线就暂时不进行下面的操作。使用networkmanager的原因是和Gnome3结合的很好，并且可以管理有线和wifi。>对新安装的系统，需要再次设置网络。具体请参考 [Network configuration (简体中文)](https://wiki.archlinux.org/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)") 。对于 [无线网络配置](https://wiki.archlinux.org/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")，[安装](https://wiki.archlinux.org/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)，[dialog](https://www.archlinux.org/packages/?name=dialog) 以及需要的 [固件软件包](https://wiki.archlinux.org/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
+  - initramfs 创建一个初始 RAM disk：`mkinitcpio -p linux`
+  - root密码 用`passwd`来更改
+  - grub引导。

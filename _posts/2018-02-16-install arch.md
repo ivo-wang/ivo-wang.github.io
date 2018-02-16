@@ -71,7 +71,9 @@ zh_TW.UTF-8 UTF-8
 ::1		localhost.localdomain	localhost
 127.0.1.1	myhostname.localdomain	myhostname
   ```
-  - 网络配置 如果使用有线网的话，令dhcp服务开机启动:`systemctl enable dhcpcd.service`.如果使用无线网络的话，要安装这几个包，否则重启之后无法连接无线网络`pacman -S iw wpa_supplicant dialog networkmanager`.> 如果退出chroot之后，进入arch，使用Wifi，那么就可以禁用dhcp，让networkmanager自启。如果是有线就暂时不进行下面的操作。使用networkmanager的原因是和Gnome3结合的很好，并且可以管理有线和wifi。> 对新安装的系统，需要再次设置网络。具体请参考 [Network configuration (简体中文)](https://wiki.archlinux.org/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)") 。对于 [无线网络配置](https://wiki.archlinux.org/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")，[安装](https://wiki.archlinux.org/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)，[dialog](https://www.archlinux.org/packages/?name=dialog) 以及需要的 [固件软件包](https://wiki.archlinux.org/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
+  - 网络配置 如果使用有线网的话，令dhcp服务开机启动:`systemctl enable dhcpcd.service`.如果使用无线网络的话，要安装这几个包，否则重启之后无法连接无线网络`pacman -S iw wpa_supplicant dialog networkmanager`.
+  > 如果退出chroot之后，进入arch，使用Wifi，那么就可以禁用dhcp，让networkmanager自启。如果是有线就暂时不进行下面的操作。使用networkmanager的原因是和Gnome3结合的很好，并且可以管理有线和wifi。
+  > 对新安装的系统，需要再次设置网络。具体请参考 [Network configuration (简体中文)](https://wiki.archlinux.org/index.php/Network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Network configuration (简体中文)") 。对于 [无线网络配置](https://wiki.archlinux.org/index.php/Wireless_network_configuration_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87) "Wireless network configuration (简体中文)")，[安装](https://wiki.archlinux.org/index.php/%E5%AE%89%E8%A3%85 "安装") 软件包 [iw](https://www.archlinux.org/packages/?name=iw), [wpa_supplicant](https://www.archlinux.org/packages/?name=wpa_supplicant)，[dialog](https://www.archlinux.org/packages/?name=dialog) 以及需要的 [固件软件包](https://wiki.archlinux.org/index.php/Wireless#Installing_driver.2Ffirmware "Wireless").
   - initramfs 创建一个初始 RAM disk：`mkinitcpio -p linux`
   - root密码 用`passwd`来更改
   - grub引导。

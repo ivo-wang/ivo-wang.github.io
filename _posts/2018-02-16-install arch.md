@@ -34,4 +34,11 @@ tags:
 - 更新系统时间 `timedatectl set-ntp true`
 - 下面要对硬盘重新的分区 因为用的gpt所以我用的gdisk工具，如果是用mbr直接用disk就好了。说几个gdisk常用的选项 o 新建分区表gpt格式的;n新建分区;p 列出现有分区;d删除分区;w保存。我用的硬盘分区如下 128g固态，500m esp分区，4g swap，其余给/;500g 机械，给/home
  具体过程如下。首先用`lsblk`来查看具体的分区大小来判断哪个是机械硬盘，哪个是固态硬盘。我的机械是`/dev/sda`，固态`/dev/sdb`. 现在开始分区，`gdisk /dev/sdb`
-  -
+  - 首先 p一下看看有哪些已经做好的分区，然后一个一个的d删除，o一下新建一个gpt分区表，之后n，创建新的分区，编号默认，起始默认，+500M这是esp分区，8300 linux默认即可，这就是sdb1 500m的esp分区。这里说一下有的教程会让更改83xx的号，没用，后面都得重新格式化，所以没有意义。继续，n，number不管，起始默认，+4G，8300。再继续，n，number不管，起始默认，结束默认，8300默认，这里要保存一下，w。完成。然后将机械硬盘整体格式化为`sda1 500g`
+  - 此时分区为 `esp /dev/sdb1 500m`，`swap /dev/sdb2 4g`，`根分区 / /dev/sdb3`，`/home /dev/sda1 500g`。分别格式化操作。`mkfs.fat -F32 /dev/sdb1`,`mkswap /dev/sdb2`,`mkfs.ext4 /dev/sdb3`,`mkfs.ext4 /dev/sda1`
+- 挂载 `mount /dev/sdb3 /mnt` 创建三个文件夹boot，boot/efi，home。`cd /mnt` `mkdir -p boot/efi` `mkdir home`.继续挂载 `mount /dev/sdb1 /mnt/boot/efi` `mount /dev/sda1 /mnt/home`.启用swap `swapon /dev/sdb2`。后面会用到genfstab，它会自动检测挂载的文件系统和 swap 分区。
+
+### 0x03 安装
+
+
+

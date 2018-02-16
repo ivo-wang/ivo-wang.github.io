@@ -15,6 +15,7 @@ tags:
 ### 0x01 准备过程
 - archlinux的livecd光盘，这个去archlinux官网去下载[https://www.archlinux.org/download/](https://www.archlinux.org/download/)
 - 把iso刻录进光盘;用dd命令或其他方式烧录iso到u盘中
+
 ####　刻录及烧录
 　- 刻录使用刻录大师，选iso镜像，千万不要选择成数据盘这样没用
 　- linux 下建议用dd命令来操作　dd if=./archlinux.iso of=/dev/sdx #x代表ｕ盘。windows下建议使用rufus来烧录，操作非常的方便成功率也高。

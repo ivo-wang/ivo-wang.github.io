@@ -42,6 +42,7 @@ sudo systemctl disable 服务名 （取消开机启动一项服务）
 - yaourt.安装这个后面有着非常大的便利  `cd tmp` `git clone https://aur.archlinux.org/package-query.git`,这是依赖,进入目录`cd package-query`,`makepkg -si`,一路回车,速度较慢各种编译.然后`git clone https://aur.archlinux.org/yaourt.git`,`cd yaourt`,'makepkg -si'即可安装完成.
 - 安装`chrome` 官方源没有 要用 `yaourt`来安装 `yaourt -S google-chrome`这时必须不能用root账户来操作.
 - 输入法 `pacman -S fcitx-im fcitx-configtool`
+
 ```
  cat .xprofile 
 export GTK_IM_MODULE=fcitx

@@ -63,5 +63,4 @@ export XMODIFIERS="@im=fcitx"
 
 ```
 - 自动挂载移动硬盘和手机，读写 NTFS 盘`pacman -S gvfs gvfs-mtp ntfs-3g`
-- 虚拟机 virtualbox `sudo pacman -S virtualbox`.去官网下载扩展包[https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 

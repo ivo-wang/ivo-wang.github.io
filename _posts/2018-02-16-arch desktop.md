@@ -40,8 +40,20 @@ sudo systemctl disable 服务名 （取消开机启动一项服务）
 - 触摸板点击没有效果,只能实体按键.设置 setting-settings manager-mouse and touchpad-touchpad-general-勾选tap touchpad to click.这里如果不好使,装去触摸板的程序`pacman -S xf86-input-synaptics`
 - 没有locate,装`sudo pacman -S mlocate` `sudo updatedb`
 - yaourt.安装这个后面有着非常大的便利  `cd tmp` `git clone https://aur.archlinux.org/package-query.git`,这是依赖,进入目录`cd package-query`,`makepkg -si`,一路回车,速度较慢各种编译.然后`git clone https://aur.archlinux.org/yaourt.git`,`cd yaourt`,'makepkg -si'即可安装完成.
+
+```
+git clone https://aur.archlinux.org/package-query.git
+cd package-query
+makepkg -si
+cd ..
+git clone https://aur.archlinux.org/yaourt.git
+cd yaourt
+makepkg -si
+cd ..
+```
+
 - 安装`chrome` 官方源没有 要用 `yaourt`来安装 `yaourt -S google-chrome`这时必须不能用root账户来操作.
-- 输入法 `pacman -S fcitx-im fcitx-configtool`
+- 输入法 `pacman -S fcitx-im fcitx-configtool`.在/~下创建一个.xprofile的文件,内容如下,cat是查看的命令只保留 export部分即可
 
 ```
  cat .xprofile 
@@ -51,5 +63,5 @@ export XMODIFIERS="@im=fcitx"
 
 ```
 - 自动挂载移动硬盘和手机，读写 NTFS 盘`pacman -S gvfs gvfs-mtp ntfs-3g`
-- 虚拟机 virtualbox `sudo pacman -S virtualbox`
+- 虚拟机 virtualbox `sudo pacman -S virtualbox`.去官网下载扩展包[https://www.virtualbox.org/wiki/Downloads](https://www.virtualbox.org/wiki/Downloads)
 

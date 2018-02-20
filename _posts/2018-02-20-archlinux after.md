@@ -22,5 +22,5 @@ powerline
 - 媒体 `yaourt kodi`
 - 主题 `yaourt numix`
 - 文本 `yaourt wps-office`
-- virtualbox虚拟机 `sudo pacman -S virtualbox-host-modules-arch virtualbox virtualbox-guest-utils`,之后再装扩展插件.这里因为没有使用自己编译的内核所以要用virtualbox-host-modules-arch这个包,其他的扩展同理.
+- virtualbox虚拟机 `sudo pacman -S virtualbox-host-modules-arch virtualbox `,之后再装扩展插件.这里因为没有使用自己编译的内核所以要用virtualbox-host-modules-arch这个包,其他的扩展同理.
 - pdf viewer `sudo pacman -S evince`

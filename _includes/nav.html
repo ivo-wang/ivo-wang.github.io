@@ -17,6 +17,29 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
+                        <!-- HTML elements for search -->
+                        <div id="search-container">
+                          <input type="text" id="search-input" placeholder="search...">
+                          <ul id="results-container"></ul>
+                        </div>
+
+                        <!-- script pointing to jekyll-search.js -->
+                        <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
+
+                         <script>
+                              window.simpleJekyllSearch = new SimpleJekyllSearch({
+                                searchInput: document.getElementById('search-input'),
+                                resultsContainer: document.getElementById('results-container'),
+                                json: '{{ site.baseurl }}/search.json',
+                                searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
+                                noResultsText: 'No results found',
+                                limit: 10,
+                                fuzzy: false,
+                                exclude: ['Welcome']
+                              })
+                            </script>
+                    </li>
+                    <li>
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
                     {% for page in site.pages %}{% if page.title %}
@@ -33,27 +56,7 @@
 
 
 
-    <!-- HTML elements for search -->
-    <div id="search-container">
-      <input type="text" id="search-input" placeholder="search...">
-      <ul id="results-container"></ul>
-    </div>
 
-    <!-- script pointing to jekyll-search.js -->
-    <script src="{{ site.baseurl }}/js/simple-jekyll-search.min.js"></script>
-
-     <script>
-          window.simpleJekyllSearch = new SimpleJekyllSearch({
-            searchInput: document.getElementById('search-input'),
-            resultsContainer: document.getElementById('results-container'),
-            json: '{{ site.baseurl }}/search.json',
-            searchResultTemplate: '<li><a href="{url}" title="{desc}">{title}</a></li>',
-            noResultsText: 'No results found',
-            limit: 10,
-            fuzzy: false,
-            exclude: ['Welcome']
-          })
-        </script>
 
 </nav>
 <script>

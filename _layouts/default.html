@@ -3,22 +3,6 @@
 
 {% include head.html %}
 
-<!-- hack iOS CSS :active style -->
-<body ontouchstart="">
-
-    {% include nav.html %}
-
-    {{ content }}
-
-    {% include footer.html %}
-
-
-<!-- Image to hack wechat -->
-<img src="/img/apple-touch-icon.png" width="0" height="0" />
-<!-- Migrate from head to bottom, no longer block render and still work -->
-
-
-
 <!-- HTML elements for search -->
 <div id="search-container">
   <input type="text" id="search-input" placeholder="search...">
@@ -40,6 +24,22 @@
         exclude: ['Welcome']
       })
     </script>
+
+
+
+<!-- hack iOS CSS :active style -->
+<body ontouchstart="">
+
+    {% include nav.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+
+
+<!-- Image to hack wechat -->
+<img src="/img/apple-touch-icon.png" width="0" height="0" />
+<!-- Migrate from head to bottom, no longer block render and still work -->
 
 
 </body>

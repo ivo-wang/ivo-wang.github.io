@@ -17,9 +17,6 @@
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="{{ site.baseurl }}/">搜索</a>
-                    </li>
-                    <li>
                         <a href="{{ site.baseurl }}/">Home</a>
                     </li>
                     {% for page in site.pages %}{% if page.title %}
@@ -61,6 +58,7 @@
         exclude: ['Welcome']
       })
     </script>
+<!-- HTML elements for search -->
 <script>
     // Drop Bootstarp low-performance Navbar
     // Use customize navbar with high-quality material design animation

@@ -16,7 +16,7 @@ tags:
 
 search.json
 
-```
+```sh
 ---
 layout: null
 ---

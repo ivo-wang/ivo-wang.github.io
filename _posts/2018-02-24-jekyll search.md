@@ -14,25 +14,7 @@ tags:
 
 ### 新建一个json在博客的根目录 
 
-search.json
-
-```json
-
----
-layout: null
----
-[
-  {% for post in site.posts %}
-    {
-      "title"    : "{{ post.title | escape }}",
-      "category" : "{{ post.category }}",
-      "tags"     : "{{ post.tags | join: ', ' }}",
-      "url"      : "{{ site.baseurl }}{{ post.url }}",
-      "date"     : "{{ post.date }}"
-    } {% unless forloop.last %},{% endunless %}
-  {% endfor %}
-]
-```
+[点此下载](/search.json),search.json 或去上面的项目里面自己复制创建
 
 ### 复制js
 

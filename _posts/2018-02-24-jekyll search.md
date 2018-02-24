@@ -14,8 +14,8 @@ tags:
 
 ### 新建一个json在博客的根目录 
 
-[点此下载](/search.json),search.json 或去上面的项目里面自己复制创建
-
+去上面的项目里面自己复制创建,因为解析的原因,我的博客模板已经自己解析了json.地址
+[去看readme创建search.json](https://github.com/christian-fei/Simple-Jekyll-Search/blob/master/README.md)
 ### 复制js
 
 复制上面的项目里面的dest目录下面的simple-jekyll-search.min.js,复制到网站根目录的js文件夹里面.

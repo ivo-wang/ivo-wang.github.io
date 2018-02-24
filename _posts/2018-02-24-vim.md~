@@ -1,0 +1,1472 @@
+---
+layout:  post
+title:  vim易用配置
+subtitle: vim 
+date: 2018-02-24
+author: ivo
+catalog: true
+header-img:
+tags:
+    - linux
+    - vim
+---
+下面这篇文是我以前的博客的,基于debian写的,但是不影响,可以给arch或其他的版本用
+
+新安装的vim没有彩色显示 那么可以使用下面命令
+
+终端背景#002B36
+
+<wbr>
+
+<wbr>
+
+<wbr>
+
+<wbr> 字体颜色#839496
+
+
+链接: http://pan.baidu.com/s/1c0B3wYG 密码:
+ki7a（专用于ivo）
+
+<wbr>
+
+
+**<font color="#0B74FF">1.首先安装Vim的</font>**
+
+
+2.<font color="#1445FF"><b>随便新建一个文件</b></font>，譬如简单的cpp文件，用你的vim打开它。如果此时你看到了彩色显示的代码，那么恭贺你成功了。如果此时还不行就跟着下一步。进入简单的cpp文件后，
+
+<font color="#0937FF"><b><span style="font-family: simsun; font-size: 13.63636302948px; line-height: 21px;">敲入</span><br style="font-family: simsun; font-size: 13.63636302948px; line-height: 21px;">
+
+<span style="font-family: simsun; font-size: 13.63636302948px; line-height: 21px;">
+:syntax on &nbsp;<wbr></span></b></font>
+
+<wbr style="color: rgb(50, 62, 50); font-family: simsun; font-size: 13.63636302948px; line-height: 21px;">
+
+
+<font color="#323E32">此时要么分为两种情况，</font>**<font color="#4D6DF3">如果正常彩色显示了，请转向第4步</font>**
+
+<font color="#323E32">；如</font>果只是粗体或者下划线而没有任何彩色显示，请看第3步。
+
+
+3.很遗憾，说明你的终端并不支持现在的彩色显示。如果你在本机上安装，那么只要修改你的$TERM参数即可。
+
+echo $TERM
+
+<wbr>
+
+<wbr style="color: rgb(50, 62, 50); font-family: simsun; font-size: 13.63636302948px; line-height: 21px;">
+
+export TERM=xterm-color
+
+<wbr>
+
+<wbr style="color: rgb(50, 62, 50); font-family: simsun; font-size: 13.63636302948px; line-height: 21px;">
+
+echo $TERM
+
+<wbr>
+
+<wbr style="color: rgb(50, 62, 50); font-family: simsun; font-size: 13.63636302948px; line-height: 21px;">
+
+
+通过echo输出我们可以看到修改前后的参数变化。如果你是通过终端访问远程计算机，那么你不仅需要照上面的修改$TERM参数，而且还要修改你
+的”会话选项”>”终端”>”仿真”，选择下选菜单中的xterm，并打钩ANSI彩色，并根据自己需要是否选择彩色方案，如下所示：（另外
+CPT推荐大家使用secureCRT当终端访问远程服务器~：））
+
+
+如果操作没有问题的,此时Vim中已经可以彩色显示了。
+
+
+4.那么刚才我们是在Vim中暂时开启了彩色显示功能，相当不人性化，所以我们可以<font color="#4D6DF3"><b>修改用户目录下的Vim配置文件，或者全局Vim配置文件</b></font>修改
+Vim的设置。两个文件分别储存<font style="font-size: 20px;" color="#FF0000">在~/.vimrc和/etc/vimrc中</font>。（注意第一个有点，第二个没有点哦，如果没有的话就新建吧）。
+
+<font style="font-size: 20px;" color="#FF0000"><span style="font-family: simsun; line-height: 21px;">在配置文件
+中，CPT本人只增加了两行：</span><br style="font-family: simsun; line-height: 21px;">
+<span style="font-family: simsun; line-height: 21px;">view
+plaincopy to clipboardprint?</span><br style="font-family: simsun; line-height: 21px;">
+<span style="font-family: simsun; line-height: 21px;">syntax
+on&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr>//开启彩色显示
+&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><br style="font-family: simsun; line-height: 21px;">
+<span style="font-family: simsun; line-height: 21px;">set
+nu&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr></span><wbr style="font-family: simsun; line-height: 21px;"><span style="font-family: simsun; line-height: 21px;">&nbsp;<wbr>//开启行号显示
+&nbsp;<wbr></span></font>
+
+<wbr style="color: rgb(50, 62, 50); font-family: simsun; font-size: 13.63636302948px; line-height: 21px;">
+
+<font color="#FF0000" style="word-wrap: normal; word-break: normal; line-height: 21px; font-family: simsun; font-size: 13.63636302948px;">
+(只修改/etc/vimrc，我发现居然也可以)</font>
+
+<font color="#FF0000" style="background-color: rgb(255, 255, 255);"><br></font>
+
+<font color="#FF0000" style="background-color: rgb(255, 255, 255);"><br></font>
+
+<font style="font-size: 32px; background-color: rgb(255, 255, 255);" color="#1B15FF"><br></font>
+
+<font style="font-size: 32px;" color="#1B15FF">重定义命令</font>
+
+5.以上我们解决了Vim的颜色显示问题，至于Vi的彩色显示，我们采用一个小Trick，即把Vim变成是Vi的别名，系统调用Vi的时候，就相
+当于是调用了Vim，是不是很方便呢？用Vim打开~/.bashrc或者/etc/bashrc（两者类似于4中的）。在文件最后增加一行：
+
+alias vi=vim
+
+<wbr>
+
+<wbr style="color: rgb(50, 62, 50); font-family: simsun; font-size: 13.63636302948px; line-height: 21px;">
+
+<font color="#FF0000" style="word-wrap: normal; word-break: normal; line-height: 21px; font-family: simsun; font-size: 13.63636302948px;">
+(只修改</font>
+
+<font color="#FF0000" style="word-wrap: normal; word-break: normal; line-height: 21px; font-family: simsun; font-size: 13.63636302948px;">~/.bashrc，我发现居然也可以)</font>
+
+好，基本上就大功告成啦。
+
+<font color="#ED1C24" style="word-wrap: normal; word-break: normal; line-height: 21px; font-family: simsun; font-size: 13.63636302948px;">重启一下系统</font>，现在的视觉感受是不是强了很多，工作效率大幅提高有木有！
+
+
+
+
+
+<font style="font-size: 20px;" color="#FF0000"><span style="line-height: 21px; background-color: rgb(255, 255, 255);">配置文件详解：</span></font>
+
+
+在UBUNTU中vim的配置文件存放在/etc/vim目录中，配置文件名为vimrc
+
+<wbr>
+
+在Fedora中vim的配置文件存放在/etc目录中，配置文件名为vimrc
+
+在Red Hat Linux 中vim的配置文件存放在/etc目录中，配置文件名为vimrc
+
+1.  set
+    nocompatible
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"去掉有关vi一致性模式，避免以前版本的bug和局限
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+2.  set
+    nu!
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"显示行号
+
+3.  set
+
+    <wbr>guifont=Luxi/
+
+    <wbr>Mono/
+
+    <wbr>9
+
+    <wbr>
+
+    <wbr>
+    "
+
+    <wbr>设置字体，字体名称和字号
+
+4.  filetype
+    on
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"检测文件的类型
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+5.  set
+    history=1000
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"记录历史的行数
+
+6.  set
+    background=dark
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"背景使用黑色
+
+7.  syntax
+    on
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr> "语法高亮度显示
+
+8.  set
+    autoindent
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"vim使用自动对齐，也就是把当前行的对齐格式应用到下一行(自动缩进）
+
+9.  set
+    cindent
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"（cindent是特别针对 C语言语法自动缩进）
+
+10.  set
+    smartindent
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+    "依据上面的对齐格式，智能的选择对齐方式，对于类似C语言编写上有用
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+11.  set
+    tabstop=4
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr> "设置tab键为4个空格，
+
+12.  set
+    shiftwidth
+
+    <wbr>=4
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+    "设置当行之间交错时使用4个空格
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+13.  set
+
+    <wbr>ai!
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+    "
+
+    <wbr>设置自动缩进
+
+    <wbr>
+
+14.  set
+    showmatch
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"设置匹配模式，类似当输入一个左括号时会匹配相应的右括号
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+15.  set
+    guioptions-=T
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"去除vim的GUI版本中得toolbar
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+16.  set vb
+    t_vb=
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+    "当vim进行编辑时，如果命令错误，会发出警报，该设置去掉警报
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+17.  set
+    ruler
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+    "在编辑过程中，在右下角显示光标位置的状态行
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+18.  set
+    nohls
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"默认情况下，寻找匹配是高亮度显示，该设置关闭高亮显示
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+19.  set
+    incsearch
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"在程序中查询一单词，自动匹配单词的位置；如查询desk单词，当输到/d时，会自动找到第一个d开头的单词，当输入到/de时，会自动找到第一个以ds开头的单词，以此类推，进行查找；当找到要匹配的单词时，别忘记回车
+
+    <wbr>
+
+20.  set
+
+    <wbr>backspace=2
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>"
+
+    <wbr>设置退格键可用
+
+21.  修改一个文件后，自动进行备份，备份的文件名为原文件名加“~”后缀
+
+* <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+    if has("vms")
+
+* <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+    set nobackup
+
+* <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+    else
+
+* <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+    set backup
+
+* <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+
+    <wbr>
+    endif
+
+如果设置完成后，发现功能没有起作用，检查一下系统下是否安装了vim-enhanced包，查询命令为：
+
+<wbr>
+<wbr>
+<wbr>
+<wbr>
+<wbr>
+<wbr>
+<wbr>
+$rpm -q vim-enhanced
+注意：如果设置好以上设置后，VIM没有作出相应的动作，那么请你把你的VIM升级到最新版，一般只要在终端输入以下命令即可：sudo
+apt-get install vim
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+在终端下使用vim进行编辑时，默认情况下，编辑的界面上是没有显示行号、语法高亮度显示、智能缩进
+
+等功能的。为了更好的在vim下进行工作，需要手动设置一个配置文件：.vimrc。
+在启动vim时，当前用户根目录下的.vimrc文件会被自动读取，该文件可以包含一些设置甚至脚本，
+
+所以，一般情况下把.vimrc文件创建在当前用户的根目录下比较方便，即创建的命令为：
+$vi ~/.vimrc
+设置完后
+$:x
+<wbr>或者
+<wbr>$wq
+<wbr>
+进行保存退出即可。
+下面给出一个例子，其中列出了经常用到的设置，详细的设置信息请参照参考资料：
+“双引号开始的行为注释行，下同
+“去掉讨厌的有关vi一致性模式，避免以前版本的一些bug和局限
+set nocompatible
+“显示行号
+set number
+“检测文件的类型
+filetype
+on
+<wbr>
+“记录历史的行数
+set
+history=1000
+<wbr>
+“背景使用黑色
+set
+background=dark
+<wbr>
+“语法高亮度显示
+syntax
+on
+<wbr>
+“下面两行在进行编写代码时，在格式对起上很有用；
+“第一行，vim使用自动对起，也就是把当前行的对起格式应用到下一行；
+“第二行，依据上面的对起格式，智能的选择对起方式，对于类似C语言编
+“写上很有用
+set autoindent
+set smartindent
+“第一行设置tab键为4个空格，第二行设置当行之间交错时使用4个空格
+set tabstop=4
+set shiftwidth=4
+“设置匹配模式，类似当输入一个左括号时会匹配相应的那个右括号
+set showmatch
+“去除vim的GUI版本中的toolbar
+set guioptions=T
+“当vim进行编辑时，如果命令错误，会发出一个响声，该设置去掉响声
+set vb t_vb=
+“在编辑过程中，在右下角显示光标位置的状态行
+set ruler
+“默认情况下，寻找匹配是高亮度显示的，该设置关闭高亮显示
+set nohls
+“查询时非常方便，如要查找book单词，当输入到/b时，会自动找到第一
+“个b开头的单词，当输入到/bo时，会自动找到第一个bo开头的单词，依
+“次类推，进行查找时，使用此设置会快速找到答案，当你找要匹配的单词
+“时，别忘记回车
+set incsearch
+“修改一个文件后，自动进行备份，备份的文件名为原文件名加“~“后缀
+if
+has(“vms”)
+<wbr>//注意双引号要用半角的引号"　"
+set nobackup
+else
+set backup
+endif
+如果去除注释后，一个完整的.vimrc配置信息如下所示：
+set nocompatible
+set number
+filetype on
+<wbr>
+set history=1000
+<wbr>
+set background=dark
+<wbr>
+syntax on
+<wbr>
+set autoindent
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set showmatch
+set guioptions-=T
+set vb t_vb=
+set ruler
+set nohls
+set incsearch
+if has("vms")
+set nobackup
+else
+set backup
+endif
+如果设置完后，发现功能没有起作用，检查一下系统下是否安装了vim-enhanced包，查询命令为：
+$rpm –q
+vim-enhanced
+参考资料：
+1．vim的完全翻译版在下面连接处可以找到
+http://vimcdoc.sourceforge.net/
+可以下栽其中的一个PDF版本，里面介绍的很详细，强烈推荐：）
+2．更详细的vim信息可以访问：
+http://www.vim.org/
+3．一个带有英文注释的.vimrc例子
+http://www.vi-improved.org/vimrc.php
+
+此文讲解的是vim编辑多字节编码文档（中文）所要了解的一些基础知识，注意其没有涉及gvim，纯指字符终端下的vim。
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+**vim编码方面的基础知识：**
+
+1，存在3个变量：
+encoding—-该选项使用于缓冲的文本(你正在编辑的文件)，寄存器，Vim 脚本文件等等。你可以把 ‘encoding’
+选项当作是对 Vim 内部运行机制的设定。
+fileencoding—-该选项是vim写入文件时采用的编码类型。
+termencoding—-该选项代表输出到客户终端（Term）采用的编码类型。
+2，此3个变量的默认值：
+encoding—-与系统当前locale相同，所以编辑文件的时候要考虑当前locale，否则要设置的东西就比较多了。
+fileencoding—-vim打开文件时自动辨认其编码，fileencoding就为辨认的值。为空则保存文件时采用encoding的编码，如果没有修改encoding，那值就是系统当前locale了。
+termencoding—-默认空值，也就是输出到终端不进行编码转换。
+
+由此可见，编辑不同编码文件需要注意的地方不仅仅是这3个变量，还有**系统当前locale**和**、文件本身编码以及自动编码识别**、**客户运行vim的终端所使用的编码类型**3个关键点，这3个关键点影响着3个变量的设定。
+如果有人问：为什么我用vim打开中文文档的时候出现乱码？
+答案是不确定的，原因上面已经讲了，不搞清楚这3个关键点和这3个变量的设定值，出现乱码是正常的，倒是不出现乱码那反倒是凑巧的。
+
+**再来看一下常见情况下这三个关键点的值以及在这种情况下这3个变量的值：**
+1，locale—-目前大部分Linux系统已经将utf-8作为默认locale了，不过也有可能不是，例如有些系统使用中文locale
+zh_CN.GB18030。在locale为utf-8的情况下，启动vim后encoding将会设置为utf-8，这是兼容性最好的方式，因为内部
+处理使用utf-8的话，无论外部存储编码为何都可以进行无缺损转换。locale决定了vim内部处理数据的编码，也就是encoding。
+2，文件的编码以及自动编码识别—-这方面牵扯到各种编码的规则，就不一一细讲了。但需要明白的是，文件编码类型并不是保存在文件内的，也就是说没有任何
+描述性的字段来记录文档是何种编码类型的。因此我们在编辑文档的时候，要么必须知道这文档保存时是以什么编码保存的，要么通过另外的一些手段来断定编码类
+型，这另外的手段，就是通过某些编码的码表特征来断定，例如每个字符占用的字节数，每个字符的ascii值是否都大于某个字段来断定这个文件属于何种编
+码。这种方式vim也使用了，这就是vim的自动编码识别机制了。但这种机制由于编码各式各样，不可能每种编码都有显著的特征来辨别，所以是不可能
+100%准确的。对于我们GB2312编码，由于其中文是使用了2个acsii值高于127的字符组成汉字字符的，因此不可能把gb2312编码的文件与
+latin1编码区分开来，因此自动识别编码的机制对于gb2312是不成功的，它只会将文件辨识为latin1编码。此问题同样出现在gbk，big5
+上等。因此我们在编辑此类文档时，需要手工设定encoding和fileencoding。如果文档编码为utf-8时，一般vim都能自动识别正确的
+编码。
+
+3，客户运行vim的终端所使用的编码类型—-同第二条一样，这也是一个比较难以断定的关键点。第二个关键点决定着从文件读取内容和写入内容到文件
+时使用的编码，而此关键点则决定vim输出内容到终端时使用的编码，如果此编码类型和终端认为它收到的数据的编码类型不同，则又会产生乱码问题。在
+linux本地X环境下，一般终端都认为其接收的数据的编码类型和系统locale类型相符，因此不需关心此方面是否存在问题。但如果牵涉到远程终端，例
+如ssh登录服务器，则问题就有可能出现了。例如从1台locale为GB2310的系统（称作客户机）ssh到locale为utf-8的系统（称作服
+务器）并开启vim编辑文档，在不加任何改动的情况下，服务器返回的数据为utf-8的，但客户机认为服务器返回的数据是gb2312的，按照
+gb2312来解释数据，则肯定就是乱码了，这时就需要设置termencoding为gb2312来解决这个问题。此问题更多出现在我们的
+windows
+desktop机远程ssh登录服务器的情况下，这里牵扯到不同系统的编码转换问题。所以又与windows本身以及ssh客户端有很大相关性。在
+windows下存在两种编码类型的软件，一种是本身就为unicode编码方式编写的软件，一种是ansi软件，也就是程序处理数据直接采用字节流，不
+关心编码。前一种程序可以在任何语言的windows上正确显示多国语言，而后一种则编写在何种语言的系统上则只能在何种语言的系统上显示正确的文字。对
+于这两种类型的程序，我们需要区别对待。以ssh客户端为例，我们使用的putty是unicode软件，而secure CRT则是ansi
+软件。对于前者，我们要正确处理中文，只要保证vim输出到终端的编码为utf-8即可，就是termencoding=utf-8。但对于后者，一方面
+我们要确认我们的windows系统默认代码页为cp936（中文windows默认值），另一方面要确认vim设置的termencoding=
+cp936。
+
+**最后来看看处理中文文档最典型的几种情况和设置方式：**
+
+1，系统locale是utf-8（很多linux系统默认的locale形式），编辑的文档是GB2312或GBK形式的（Windows记事本
+默认保存形式，大部分编辑器也默认保存为这个形式，所以最常见），终端类型utf-8（也就是假定客户端是putty类的unicode软件）
+则vim打开文档后，encoding=utf-8（locale决定的），fileencoding=latin1（自动编码判断机制不准导致的），termencoding=空（默认无需转换term编码），显示文件为乱码。
+解决方案1：首先要修正fileencoding为cp936或者euc-cn（二者一样的，只不过叫法不同），注意修正的方法不是:set
+fileencoding=cp936，这只是将文件保存为cp936，正确的方法是重新以cp936的编码方式加载文件为:edit
+++enc=cp936，可以简写为:e ++enc=cp936。
+解决方案2：临时改变vim运行的locale环境，方法是以LANG=zh_CN vim
+abc.txt的方式来启动vim，则此时encoding=euc-cn（locale决定的），fileencoding=空（此locale下文件
+编码自动判别功能不启用，所以fileencoding为文件本身编码方式不变，也就是euc-cn），termencoding=空（默认值，为空则等
+于encoding）此时还是乱码的，因为我们的ssh终端认为接受的数据为utf-8，但vim发送数据为euc-cn，所以还是不对。此时再用命令:
+set termencoding=utf-8将终端数据输出为utf-8，则显示正常。
+
+2，情况与1基本相同，只是使用的ssh软件为secure CRT类ansi类软件。
+
+vim打开文档后，encoding=utf-8（locale决定的），fileencoding=latin1（自动编码判断机制不准导致的），termencoding=空（默认无需转换term编码），显示文件为乱码。
+
+解决方案1：首先要保证运行secure
+CRT的windows机器的默认代码页为CP936，这一点中文windows已经是默认设置了。其他的与上面方案1相同，只是要增加一步，:set
+termencoding=cp936
+
+解决方案2：与上面方案2类似，不过最后一步修改termencoding省略即可，在此情况下需要的修改最少，只要以locale为zh_CN开
+启vim，则encoding=euc-cn，fileencoding和termencoding都为空即为encoding的值，是最理想的一种情
+况。
+
+可见理解这3个关键点和3个参数的意义，对于编码问题有很大助力，以后就可以随心所欲的处理文档了，同时不仅仅是应用于vim，在其他需要编码转换的环境里，都可以应用类似的思路来处理问题解决问题。
+
+最后推荐一款功能强大的windows下的ssh客户端—-xshell，它具有类似secure CRT一样的多tab
+的ssh窗口的能力，但最为方便的是这款工具还有改变Term编码的功能，这样我们就可以不用频繁调整termencoding，只需在ssh软件里切换
+编码即可，这是我用过的最为方便的ssh工具。它是商业软件，但非注册用户使用没有任何限制，只是30天试用期超出后会每次启动都提示注册，对于功能没有
+丝毫影响。
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+最后看到ubuntu中文站上一个完美解决的方法：在.vimrc加两句设置
+"设定文件编码类型，彻底解决中文编码问题
+<wbr>
+let &termencoding=&encoding
+<wbr>
+set fileencodings=utf-8,gbk,ucs-bom,cp936
+<wbr>
+加上发现没有作用，那就是vim的哪个包没有安装，试试把包安完全一些。

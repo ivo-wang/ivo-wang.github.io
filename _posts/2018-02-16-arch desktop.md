@@ -51,6 +51,20 @@ cd yaourt
 makepkg -si
 cd ..
 ```
+```
+Yaourt是archlinux方便使用的关键部件之一，但没有被整合到系统安装中的工具。建议在装完系统重启之后，更新完pacman和基本系统之后，就安装这个工具。
+最简单安装Yaourt的方式是添加Yaourt源至您的 /etc/pacman.conf，在文件最后加入:
+
+[archlinuxcn]
+#The Chinese Arch Linux communities packages.
+SigLevel = Optional TrustAll
+Server = https://mirrors.ustc.edu.cn/archlinuxcn/$arch
+然后
+
+pacman -Syu yaourt
+
+```
+
 
 - 安装`chrome` 官方源没有 要用 `yaourt`来安装 `yaourt -S google-chrome`这时必须不能用root账户来操作.
 - 输入法 `pacman -S fcitx-im fcitx-configtool`.在/~下创建一个.xprofile的文件,内容如下,cat是查看的命令只保留 export部分即可

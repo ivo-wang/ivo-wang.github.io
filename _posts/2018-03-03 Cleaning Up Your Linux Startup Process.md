@@ -1,10 +1,11 @@
 ---
-layput: post
+layout: post
 date: 2018-03-03
 title: systemd 下开机启动的优化，删除无用的systemd服务
 tags: systemd
 ---
 > 全文引用自 https://linux.cn/article-8835-1.html
+
 一般情况下，常规用途的 Linux 发行版在开机启动时拉起各种相关服务进程，包括许多你可能无需使用的服务，例如<ruby>蓝牙<rt>bluetooth</rt></ruby>、Avahi、 <ruby>调制解调管理器<rt>ModemManager</rt></ruby>、ppp-dns（LCTT 译注：此处作者笔误 ppp-dns 应该为 pppd-dns) 等服务进程，这些都是什么东西？用于哪里，有何功能？
 
 Systemd 提供了许多很好的工具用于查看系统启动情况，也可以控制在系统启动时运行什么。在这篇文章中，我将说明在 Systemd 类发行版中如何关闭一些令人讨厌的进程。

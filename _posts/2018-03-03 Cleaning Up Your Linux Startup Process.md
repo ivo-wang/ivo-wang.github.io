@@ -2,7 +2,8 @@
 layout: post
 date: 2018-03-03
 title: systemd 下开机启动的优化，删除无用的systemd服务
-tags: systemd
+tags: 
+	 - systemd
 ---
 > 全文引用自 https://linux.cn/article-8835-1.html
 

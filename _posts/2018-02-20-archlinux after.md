@@ -8,7 +8,7 @@ catalog: true
 header-img:
 tags:
     - archlinux
-    - 
+	- 
 ---
 archlinux 安装完成以后,就需要对这个系统进行更多的基本的软件安装,下面列举了一些常用的软件.
 - xarchiver 是Xfce4 默认的压缩文档管理器。`sudo pacman -S xarchiver p7zip`
@@ -20,7 +20,8 @@ archlinux 安装完成以后,就需要对这个系统进行更多的基本的软
 powerline
 - 自动挂载 `sudo pacman -S gvfs gvfs-mtp ntfs-3g` 
 - 媒体 `yaourt kodi`
-- 主题 `yaourt numix`
+- 主题icon `yaourt numix`
+- 主题 `sudo pacman -S arc-gtk-theme `
 - 文本 `yaourt wps-office`
 - virtualbox虚拟机 `sudo pacman -S virtualbox-host-modules-arch virtualbox `,之后再装扩展插件.这里因为没有使用自己编译的内核所以要用virtualbox-host-modules-arch这个包,其他的扩展同理.
 - pdf viewer `sudo pacman -S evince`

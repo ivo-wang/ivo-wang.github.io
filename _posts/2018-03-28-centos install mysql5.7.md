@@ -1,13 +1,13 @@
 ---
 layout:  post
 title:  centos install mysql5.7
-subtitle: centos install mysql5.7 
+subtitle: centos install mysql5.7
 date: 2018-03-28
 author: ivo
 catalog: true
 header-img:
 tags:
-    - centos7 
+    - centos7
     - mysql5.7
 ---
 # How To Install MySQL on CentOS 7
@@ -33,35 +33,31 @@ tags:
     <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">request</small>
       ](javascript:;)
 
-* 
+*
 
-### Introduction
+### 简介
 
-[MySQL](https://www.mysql.com/)是一个开源的数据库，它也是LEMP的一部分[LEMP](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-7) (Linux, Nginx, MySQL/MariaDB, PHP/Python/Perl) stack. It uses a relational database and SQL (Structured Query Language) to manage its data.
+[MySQL](https://www.mysql.com/)是一个开源的数据库，它也是LEMP的一部分[LEMP](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-7) (Linux, Nginx, MySQL/MariaDB, PHP/Python/Perl)
 
-CentOS 7 prefers MariaDB, a fork of MySQL managed by the original MySQL developers and designed as a replacement for MySQL. If you run `yum install mysql` on CentOS 7, it is MariaDB that is installed rather than MySQL. If you're wondering about MySQL vs. MariaDB, [MariaDB will generally work seamlessly in place of MySQL](https://mariadb.com/kb/en/mariadb/mariadb-vs-mysql-compatibility/), so unless you have a specific use-case for MySQL, see the [How To Install MariaDB on Centos 7](https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-centos-7) guide.
+CentOS 7默认使用mariadb来代替传统的masql，mariadb是从mysql商业化以后fork出来的一个开发版本. 如果你运行`yum install mysql`在 CentOS 7, 它实际上安装的是mariadb. 下面这些是 MySQL 与 MariaDB的区别, [MariaDB will generally work seamlessly in place of MySQL](https://mariadb.com/kb/en/mariadb/mariadb-vs-mysql-compatibility/), so unless you have a specific use-case for MySQL, see the [How To Install MariaDB on Centos 7](https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-centos-7) guide.
 
-This tutorial will explain how to install MySQL version 5.7 on a CentOS 7 server.
+下面将教你在 CentOS 7服务器上面安装 MySQL  5.7版本
 
-## Prerequisites
+## 准备
 
-To follow this tutorial, you will need:
+* 一个 CentOS 7 服务器，以及root用户。连接中是初始化一个centos7[Initial Server Setup with CentOS 7](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-centos-7) guide.
 
-* A CentOS 7 with a non-root user with `sudo` privileges. You can learn more about how to set up a user with these privileges in the [Initial Server Setup with CentOS 7](https://www.digitalocean.com/community/tutorials/initial-server-setup-with-centos-7) guide.
+## 步骤 1
 
-## Step 1 — Installing MySQL
+如果是必须安装mysql而不是mariadb。你需要到mysql的开发站去找对应的版本 [the MySQL community Yum Repository](https://dev.mysql.com/downloads/repo/yum/)
 
-As mentioned in the introduction,  the Yum command to install MySQL in fact installs MariaDB. To install MySQL, we'll need to visit [the MySQL community Yum Repository](https://dev.mysql.com/downloads/repo/yum/) which provides packages for MySQL.
-
-In a web browser, visit:
+在浏览器中打开下面的地址：
 
 ```
 https://dev.mysql.com/downloads/repo/yum/
 ```
 
-Note that the prominent Download links don't lead directly to the files. Instead, they lead to a subsequent page where you're invited to log in or sign up for an account. If you don't want to create an account, you can locate the text "No thanks, just start my download", then right-click and copy the link location, or you can edit the version number in the commands below.
-
-Locate the desired version, and update it as needed in the link below:
+根据下图来操作，寻找对应的版本
 
 ![Screencapture highlighting current yum repo name](https://assets.digitalocean.com/articles/mysql-centos7/repo-name-small.png)
 
@@ -69,7 +65,7 @@ Locate the desired version, and update it as needed in the link below:
 wget https://dev.mysql.com/get/mysql57-community-release-el7-9.noarch.rpm
 ```
 
-Once the rpm file is saved, we will verify the integrity of the download by running `md5sum` and comparing it with the corresponding MD5 value listed on the site:
+下载好了rpm包以后，需要做一个md5校验，这样安全一些
 
 ```
 md5sum mysql57-community-release-el7-9.noarch.rpm
@@ -79,47 +75,47 @@ md5sum mysql57-community-release-el7-9.noarch.rpm
 Output1a29601dc380ef2c7bc25e2a0e25d31e  mysql57-community-release-el7-9.noarch.rpm
 ```
 
-Compare this output with the appropriate MD5 value on the site:
+对比计算出来的md5码与网站上提供的md5码，看是否有区别。
 
 ![Screencapture highlighting md5dsum](https://assets.digitalocean.com/articles/mysql-centos7/md5-sum-small.png)
 
-Now that we've verified that the file wasn't corrupted or changed, we'll install the package:
+确认了 md5 一致，rpm包没有被篡改以后安装
 
 ```
 sudo rpm -ivh mysql57-community-release-el7-9.noarch.rpm
 ```
 
-This adds two new MySQL yum repositories, and we can now use them to install MySQL server:
+这会添加2个新的 MySQL yum 源, 我们现在可以安装 MySQL 服务了:
 
 ```
 sudo yum install mysql-server
 ```
 
-Press `y` to confirm that you want to proceed. Since we've just added the package, we'll also be prompted to accept its GPG key. Press `y` to download it and complete the install.
+按 `y`健，确认 GPG key
 
-## Step 2 — Starting MySQL
+## 步骤 2 — 启动 MySQL
 
-We'll start the daemon with the following command:
+启动守护进程:
 
 ```
 sudo systemctl start mysqld
 ```
 
-`systemctl` doesn't display the outcome of all service management commands, so to be sure we succeeded, we'll use the following command:
+`systemctl` 不显示状态，需要用下面的命令来查看
 
 ```
 sudo systemctl status mysqld
 ```
 
-If MySQL has successfully started, the output should contain `Active: active (running)` and the final line should look something like:
+如果 MySQL 启动成功 `Active: active (running)` 你将看下类似下面的提示:
 
 ```
 Dec 01 19:02:20 centos-512mb-sfo2-02 systemd[1]: Started MySQL Server.
 ```
 
-**Note:** MySQL is automatically enabled to start at boot when it is installed. You can change that default behavior with `sudo systemctl disable mysqld`  
+**Note:** MySQL 在操作系统里面是自动启动状态，用这个命令可以中止自动启动`sudo systemctl disable mysqld`  
 
-During the installation process, a temporary password is generated for the MySQL root user. Locate it in the `mysqld.log` with this command:
+在安装mysql以后, MySQL会创建一个临时密码给root用户.存储在`mysqld.log`中，用下面的命令来查看:
 
 ```
 sudo grep 'temporary password' /var/log/mysqld.log
@@ -129,19 +125,19 @@ sudo grep 'temporary password' /var/log/mysqld.log
 Output2016-12-01T00:22:31.416107Z 1 [Note] A temporary password is generated for root@localhost: mqRfBU_3Xk>r
 ```
 
-Make note of the password, which you will need in the next step to secure the installation and where you will be forced to change it. The default password policy requires 12 characters, with at least one uppercase letter, one lowercase letter, one number and one special character.
+你需要尽快更改这个密码。新密码由12个字符组成。至少有一个大写字母，一个小写字母，一个数字和一个特殊字符。
 
-## Step 3 — Configuring MySQL
+## 步骤3 配置mysql
 
-MySQL includes a security script to change some of the less secure default options for things like remote root logins and sample users.
+MySQL 包含一个安全脚本，用于更改远程root登录名和示例用户等安全性较低的默认选项。
 
-Use this command to run the security script.
+用下面这个命令运行.
 
 ```
 sudo mysql_secure_installation
 ```
 
-This will prompt you for the default root password. As soon as you enter it, you will be required to change it.
+这会提示你输入默认的root密码。
 
 ```
 OutputThe existing password for the user account root has expired. Please set a new password.
@@ -149,30 +145,26 @@ OutputThe existing password for the user account root has expired. Please set a 
 New password:
 ```
 
-Enter a new 12-character password that contains at least one uppercase letter, one lowercase letter, one number and one special character. Re-enter it when prompted.
+输入新密码
 
-You'll receive feedback on the strength of your new password, and then you'll be immediately prompted to change it again. Since you just did, you can confidently say `No`:
+您将收到关于新密码强度的反馈，然后系统会立即提示您再次更改。 如果你非常自信也可以用 `No`:
 
 ```
 OutputEstimated strength of the password: 100
 Change the password for root ? (Press y|Y for Yes, any other key for No) :
 ```
+在我们拒绝提示再次更改密码后，我们将按`Y`，然后按ENTER键以解决所有后续问题，以便删除匿名用户，禁止远程root登录，删除测试数据库并访问它，以及 重新加载特权表。
 
-After we decline the prompt to change the password again, we'll press `Y` and then `ENTER` to all the subsequent questions in order to remove anonymous users, disallow remote root login, remove the test database and access to it, and reload the privilege tables.
 
-Now that we've secured the installation, let's test it.
+## 步骤 4 — 测试 MySQL
 
-## Step 4 — Testing MySQL
-
-We can verify our installation and get information about it by connecting with the `mysqladmin` tool,  a client that lets you run administrative commands. Use the following command to connect to MySQL as **root** (`-u root`), prompt for a password (`-p`), and return the version.
+我们用 `mysqladmin` 工具可以连接测试, 也可以使用mysql 客户端来连接 **root** (`-u root`),输入密码(`-p`), 返回版本信息
 
 ```
 mysqladmin -u root -p version
 ```
 
-You should see output similar to this:
-
-Output
+下面是回显
 
 ```
 mysqladmin  Ver 8.42 Distrib 5.7.16, for Linux on x86_64
@@ -191,6 +183,4 @@ Uptime:                 2 min 17 sec
 Threads: 1  Questions: 6  Slow queries: 0  Opens: 107  Flush tables: 1  Open tables: 100  Queries per second avg: 0.043
 ```
 
-This indicates your installation has been successful. 
-
-## 
+##

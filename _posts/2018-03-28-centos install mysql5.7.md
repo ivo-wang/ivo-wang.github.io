@@ -12,29 +12,6 @@ tags:
 ---
 # How To Install MySQL on CentOS 7
 
-#### 如果没有用centos7 请看下面的连接
-
-* [    Ubuntu 16.04
-        ](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-16-04)
-* [    Ubuntu 14.04
-        ](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-14-04)
-* [    Debian 9
-
-    <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">request</small>
-      ](javascript:;)
-
-* [    Debian 8
-
-    <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">request</small>
-      ](javascript:;)
-
-* [    Ubuntu 18.04
-
-    <small class="versioned-tutorial-group-navigation__request" data-tutorial-request-status-indicator="">request</small>
-      ](javascript:;)
-
-*
-
 ### 简介
 
 [MySQL](https://www.mysql.com/)是一个开源的数据库，它也是LEMP的一部分[LEMP](https://www.digitalocean.com/community/tutorials/how-to-install-linux-nginx-mysql-php-lemp-stack-on-centos-7) (Linux, Nginx, MySQL/MariaDB, PHP/Python/Perl)

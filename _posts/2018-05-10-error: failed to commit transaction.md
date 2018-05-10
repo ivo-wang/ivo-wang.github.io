@@ -1,6 +1,6 @@
 ---
 layout:  post
-title: pacman  error: failed to commit transaction
+title: "pacman error: failed to commit transaction"
 subtitle: error: failed to commit transaction 
 date: 2018-05-10
 author: ivo

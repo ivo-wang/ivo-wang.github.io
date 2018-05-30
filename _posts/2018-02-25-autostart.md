@@ -1,6 +1,6 @@
 ---
-layout:  post
-title:  systemd 制作开机启动autostart
+layout: post
+title: systemd制作开机启动autostart
 subtitle: autostart 
 date: 2018-02-25
 author: ivo

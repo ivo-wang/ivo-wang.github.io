@@ -1,7 +1,7 @@
 ---
 layout: post
-title: systemd制作开机启动autostart
-subtitle: autostart 
+title: systemd制作开机启动
+subtitle: autostart
 date: 2018-02-25
 author: ivo
 catalog: true
@@ -9,7 +9,7 @@ header-img:
 tags:
     - systemd
     - 开机启动
-	- autostart
+    - autostart
 ---
 Arch linux Systemd自启动脚本,systemd与以往的方式不同需要用服务来实现,所以要先有一个服务,再服务里面加入需要开机启动的脚本.
 

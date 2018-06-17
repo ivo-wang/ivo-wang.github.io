@@ -1,6 +1,6 @@
 ---
 layout:  post
-title:  archlinux安装完成的后续工作
+title:  archlinux 安装完成的后续工作
 subtitle: arch的各种基本软件安装
 date: 2018-02-20
 author: ivo

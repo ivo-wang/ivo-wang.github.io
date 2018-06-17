@@ -8,7 +8,7 @@ catalog: true
 header-img:
 tags:
     - archlinux
-	- linux
+    - linux
 ---
 archlinux 安装完成以后,就需要对这个系统进行更多的基本的软件安装,下面列举了一些常用的软件.
 - xarchiver 是Xfce4 默认的压缩文档管理器。`sudo pacman -S xarchiver p7zip`

@@ -12,6 +12,26 @@ tags:
 ---
 首先确保前提条件,virtualbox 5.06以上.然后我用的是intel的处理器.我的环境是在ubuntu下来虚拟32位win7.我参考的是[http://www.cnblogs.com/yagzh2000/p/6003165.html](http://www.cnblogs.com/yagzh2000/p/6003165.html)他用的64位win7虚拟32位win7.
 
+刚安装完的archlinux 里面的virtualbox,安装好宿主的扩展与虚拟机系统里面的扩展以后,usb设备是不能够使用的.比如u盘.virtualbox 不能用u盘,这时候.将需要运行 VirtualBox 的用户名添加到 vboxusers 用户组，USB 设备才能被访问。具体命令如下
+```	
+usermod -a -G  vboxusers `whoami`
+```
+或
+1、添加usbfs用户组（装完成后会有vboxusers和vboxsf 两个用户组）
+
+    sudo groupadd usbfs
+
+2、将你的Linux常用用户添加到vboxusers、usbfs这个两个组中   
+
+    sudo adduser 123 vboxusers
+    sudo adduser 123 usbfs
+>
+> --  此内容引用自https://blog.csdn.net/jwq2011/article/details/79064110#article_content
+
+
+
+然后设置下面的
+
 ### 0x01 安装virtualbox extension pack
 - 打开https://www.virtualbox.org/wiki/Downloads
 - 点击All supported platforms 下载

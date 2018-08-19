@@ -1,7 +1,7 @@
 ---
 layout:  post
-title:  freeplne freemind 快捷键大全
-subtitle: freeplne freemind 快捷键大全 
+title:  freeplane freemind 快捷键大全
+subtitle: freeplane freemind 快捷键大全 
 date: 2018-08-19
 author: ivo
 catalog: true

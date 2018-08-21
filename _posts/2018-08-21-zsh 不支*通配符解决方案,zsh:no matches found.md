@@ -1,7 +1,7 @@
 ---
 layout:  post
-title:  zsh 不支*通配解方案,zsh:no matches found
-subtitle: zsh 不支*通配解方案,zsh:no matches found 
+title:  zsh 不支*通配符解决方案,zsh:no matches found
+subtitle: zsh 不支*通配符解决方案,zsh:no matches found 
 date: 2018-08-21
 author: ivo
 catalog: true

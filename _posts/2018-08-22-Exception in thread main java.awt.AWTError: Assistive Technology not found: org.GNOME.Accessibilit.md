@@ -1,6 +1,6 @@
 ---
 layout:  post
-title: Exception in thread "main" java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibilit
+title: Exception in thread main java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibilit
 subtitle: freeplane 无法启动
 date: 2018-08-22
 author: ivo

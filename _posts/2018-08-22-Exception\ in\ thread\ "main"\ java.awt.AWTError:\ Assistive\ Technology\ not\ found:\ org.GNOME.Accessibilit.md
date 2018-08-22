@@ -1,7 +1,7 @@
 ---
 layout:  post
-title:  Exception in thread "main" java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibilit
-subtitle: Exception in thread "main" java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibilit 
+title:Exception in thread "main" java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibilit
+subtitle:Exception in thread "main" java.awt.AWTError: Assistive Technology not found: org.GNOME.Accessibilit 
 date: 2018-08-22
 author: ivo
 catalog: true

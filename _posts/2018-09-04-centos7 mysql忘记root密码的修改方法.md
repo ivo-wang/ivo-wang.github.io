@@ -1,7 +1,7 @@
 ---
 layout:  post
-title:  centos7 m忘记root密码的修改方法
-subtitle: centos7 m忘记root密码的修改方法 
+title:  centos7 mysql忘记root密码的修改方法
+subtitle: centos7 mysql忘记root密码的修改方法 
 date: 2018-09-04
 author: ivo
 catalog: true

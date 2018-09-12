@@ -1,7 +1,7 @@
 ---
 layout:  post
-title:  ubuntu 使用sna软件
-subtitle: ubuntu 使用sna软件 
+title:  ubuntu 使用snap软件
+subtitle: ubuntu 使用snap软件 
 date: 2018-08-30
 author: ivo
 catalog: true

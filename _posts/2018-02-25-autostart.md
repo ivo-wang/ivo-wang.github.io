@@ -22,12 +22,15 @@ Arch linux Systemd自启动脚本,systemd与以往的方式不同需要用服务
 
 添加以下内容到AutoExec.service:
 
+```
 [Unit]
 Description=AutoExec
 [Service]
 ExecStart=/root/AutoExec.sh
 [Install]
 WantedBy=multi-user.target
+```
+
 上面的ExecStart=/root/AutoExec.sh表明开机会执行/root/AutoExec.sh，那么命令写在这里面就行了，当然，文件是可以任意指定的，改为/etc/rc.local之类的都没问题。
 连接到multi-user.target.wants
 ln -s AutoExec.service multi-user.target.wants/

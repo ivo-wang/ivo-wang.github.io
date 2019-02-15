@@ -77,11 +77,11 @@ kramdown:
 
 # Analytics settings
 # Baidu Analytics
-ba_track_id: 38b740cf9ad0c9cecb234043f940f095 
+#######################################ba_track_id: 38b740cf9ad0c9cecb234043f940f095 
 
 # Google Analytics
-ga_track_id: 'UA-113204747-2'            # Format: UA-xxxxxx-xx
-ga_domain: https://ezlost.tk               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
+########################################ga_track_id: 'UA-113204747-2'            # Format: UA-xxxxxx-xx
+########################################ga_domain: https://ezlost.tk               # 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto
 
 
 
